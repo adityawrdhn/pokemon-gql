@@ -1,68 +1,63 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Pokemon GraphQL !
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+This pokemon project creates by requirement the following :
 
-### `yarn start`
+-   We are creating pokedex app (what is pokedex? [https://id.wikipedia.org/wiki/Pok%C3%A9dex](https://id.wikipedia.org/wiki/Pok%C3%A9dex) that enable user to browse information in Poke-API ~~Consume Poke-API on [https://pokeapi.co/](https://pokeapi.co/) (for REST) or~~ [https://graphql-pokemon.now.sh/](https://graphql-pokemon.now.sh/) (for GraphQL). The scenario is focused on browsing theinformation.
+-   User can browse pokemon in infinite list - User can view detailed information of each pokemon
+-   User can view the image of each pokemon
+-   User can filter list of pokemon based on an attribute of pokemon (feel free to choose one attribute to use for filtering i.e. nature, types)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Tech!
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+-   React.js using hooks
+-   Material-UI framework.
+-   Graphql
+-   RxJS for throttling infinite list.
 
-### `yarn test`
+### Folder Structure Description
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-   `Components` spliting ui component.
+-   `Containers` component as page or container
+-   `Graphql` graphql setting and query
 
-### `yarn build`
+## Usage
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Clone and run application.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```sh
+$ cd /{YOUR_PATH_FOLDER}/
+$ git clone "https://github.com/adityawrdhn/pokemon-gql.git"
+$ cd pokemon-gql/
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Start React Apps Using Npm
 
-### `yarn eject`
+```sh
+$ cd pokemon-gql/
+$ npm install
+$ npm start
+```
+2. Start React Apps Using yarn
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```sh
+$ cd pokemon-gql/
+$ yarn
+$ yarn start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Start React Apps Using Docker
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```sh
+$ cd pokemon-gql/
+$ docker build . -t pokemon-gql
+$ docker container run -it -p 5000:5000 pokemon-gql:latest
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Run Unit Test
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```sh
+$ cd /{GIT_CLONE_FOLDER}/
+$ yarn test
+```
