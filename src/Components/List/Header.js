@@ -1,7 +1,7 @@
 import React from "react"
 import Icon from "react-icons-kit"
 import { search } from "react-icons-kit/feather"
-import { AppBar, Toolbar, Typography, InputBase, Box } from "@material-ui/core"
+import { AppBar, Toolbar, Typography, InputBase, Box, Button } from "@material-ui/core"
 import { fade, makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles((theme) => ({
@@ -41,30 +41,42 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
         justifyContent: "center",
     },
+    deleteIcon: {
+        padding: theme.spacing(0, 2),
+        height: "100%",
+        position: "absolute",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        textTransform: "capitalize",
+        right: 0,
+        top: 0,
+    },
     inputRoot: {
         color: "inherit",
     },
     inputInput: {
         padding: theme.spacing(1, 1, 1, 0),
-        // vertical padding + font size from searchIcon
         paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+        paddingRight: `calc(1em + ${theme.spacing(2)}px)`,
         transition: theme.transitions.create("width"),
         width: "100%",
         [theme.breakpoints.up("sm")]: {
             width: "20ch",
             "&:focus": {
+                paddingRight: `calc(1em + ${theme.spacing(8)}px)`,
                 width: "40ch",
             },
         },
     },
 }))
-const Header = ({ onChange, keywords }) => {
+const Header = ({ onChange, onDelete, keywords }) => {
     const classes = useStyles()
     return (
         <div className={classes.root}>
             <AppBar position="fixed">
                 <Toolbar>
-                    <Typography variant="h4" noWrap>
+                    <Typography variant="h5" noWrap>
                         Pokemon GraphQL
                     </Typography>
                     <div className={classes.search}>
@@ -72,7 +84,7 @@ const Header = ({ onChange, keywords }) => {
                             <Icon icon={search} size={16} />
                         </div>
                         <InputBase
-                            placeholder="search name, types, classification"
+                            placeholder="search name, classification, types"
                             classes={{
                                 root: classes.inputRoot,
                                 input: classes.inputInput,
@@ -80,14 +92,20 @@ const Header = ({ onChange, keywords }) => {
                             inputProps={{
                                 "aria-label": "search",
                             }}
-                            type="search"
+                            type="text"
                             onChange={onChange}
                             value={keywords}
                         />
+
+                        {keywords && (
+                            <Button className={classes.deleteIcon} color="secondary" onClick={onDelete}>
+                                Cancel
+                            </Button>
+                        )}
                     </div>
                 </Toolbar>
             </AppBar>
-            <Box height={64}/>
+            <Box height={64} />
         </div>
     )
 }
