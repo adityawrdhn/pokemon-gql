@@ -1,5 +1,10 @@
 # React Pokemon GraphQL !
 
+## Deploy
+
+- [pokedex-gql-adityawrdhn.netlify.app](https://pokedex-gql-adityawrdhn.netlify.app/)
+
+
 ## Features
 
 This pokemon project creates by requirement the following :
@@ -35,22 +40,19 @@ $ cd pokemon-gql/
 1. Start React Apps Using Npm
 
 ```sh
-$ cd pokemon-gql/
 $ npm install
 $ npm start
 ```
 2. Start React Apps Using yarn
 
 ```sh
-$ cd pokemon-gql/
 $ yarn
 $ yarn start
 ```
 
-2. Start React Apps Using Docker
+3. Start React Apps Using Docker
 
 ```sh
-$ cd pokemon-gql/
 $ docker build . -t pokemon-gql
 $ docker container run -it -p 5000:5000 pokemon-gql:latest
 ```
@@ -58,6 +60,5 @@ $ docker container run -it -p 5000:5000 pokemon-gql:latest
 ### Run Unit Test
 
 ```sh
-$ cd /{GIT_CLONE_FOLDER}/
 $ yarn test
 ```
